@@ -1,37 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style/style.css">
   </head>
   <body>
-    <?php include('navigation.php'); ?>
-    <?php
-        $pages = array(
-            'index.php' => 'Home',
-            'about.php' => 'About',
-            'contact.php' => 'Contact',
-            'faq.php' => 'FAQ',
-            'tutorials.php' => 'Tutorials',);
-        $currentPage = basename($_SERVER['REQUEST_URI']);
-        ?>
-        <div id="menu">
-            <ul id="menuList">
-                <?php foreach ($pages as $filename => $pageTitle) {
-                    if ($filename == $currentPage) { ?>
-                <li class="current"><?php echo $pageTitle ; ?></li>
-                    <?php } else { ?>
-                <li><a href="<?php echo $filename ; ?>"><?php echo $pageTitle ; ?></a></li>
-                    <?php
-                    }
-                 }?>
-            </ul>
-        </div>
+    <ul class="sidenav">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+  </ul>
   <div class="hero-image">
       <div class="hero-text">
-        <h1>I am John Doe</h1>
-        <p>And I'm a Photographer</p>
-        <button>Hire me</button>
+        <h1>I am Jenelle Williams</h1>
+        <p>And I'm a Interactive Design and Develpoment major</p>
+        <button>Learn more</button>
       </div>
   </div>
   </body>

@@ -5,8 +5,5 @@
     <title></title>
   </head>
   <body>
-    <div id="mainMenu">
-          <?php echo Navigation::getNav($databaseCnx);?>
-     </div>
   </body>
 </html>
