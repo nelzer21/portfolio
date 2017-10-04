@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php wp_head(); ?>
+    <meta charset="utf-8">
+    <title></title>
   </head>
-  <body <?php body_class(); ?>>
-      <header>
-          <nav>
-              <ul>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-              </ul>
-          </nav>
-      </header>
+  <body>
+    <div id="mainMenu">
+          <?php echo Navigation::getNav($databaseCnx);?>
+     </div>
+  </body>
+</html>
