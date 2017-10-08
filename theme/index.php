@@ -1,9 +1,3 @@
 <?php get_header(); ?>
-<main>
-
-  <h1><?php the_title(); ?></h1>
-
-</main>
+<h1>this is my index</h1
 <?php get_footer(); ?>
-
-<body <?php body_class("home"); ?>>
