@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
-		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen,projection" />
-		<?php wp_head(); ?>
-
-		</head>
-
-		<body>
-
-		<div id="wrapper">
-
-		    <div id="header">
-
-		    <p class="description"><?php bloginfo('description'); ?></p>
-
-		    <h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
-
-		    <ul id="nav">
-		    <?php wp_list_pages('sort_column=menu_order&title_li='); ?>
-		    </ul>
-
-		    </div>
+ <head>
+  <title></title>
+ </head>
+ <body>
+   <div id="header">
+    <div id="headerimg">
+      <h1>
+       <a href="<?php echo get_option('home'); ?>">
+          <?php bloginfo('name'); ?></a>
+      </h1>
+        <div class="description">
+          <?php bloginfo('description'); ?>
+        </div>
+     </div>
+   </div>
+   <div id="navmenu">
+ <ul>
+  <li><a href="<?php echo get_settings('home'); ?>">HOME</a></li>
+ <?php wp_list_categories('orderby=name&include=1,3,4,5'); ?>
+  <li><a href="http://www.wordpress.org">WORDPRESS</a></li>
+ </ul>
+ </div>

@@ -1,13 +1,42 @@
 /*
 Theme Name: New Sweet Theme
-Author: By: Jenelle Williams
 */
-.blog-nav li {
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-    font-weight: 500;
+#header {
+	background: #90a090;
+	border-bottom: double 3px #aba;
+	border-left: solid 1px #9a9;
+	border-right: solid 1px #565;
+	border-top: solid 1px #9a9;
+	font: italic normal 230% 'Times New Roman', Times, serif;
+	letter-spacing: 0.2em;
+	margin: 0;
+	padding: 15px 10px 15px 60px;
 }
-.blog-nav li a {
-    color: #fff;
-}
+#header {
+  background: url("<?php bloginfo('stylesheet_directory'); ?>/images/sunrise.jpg")
+  no-repeat bottom center; }
+#headerimg  {
+  margin: 7px 9px 0;
+  height: 192px;
+  width: 740px; }
+  h1 {attributes}
+
+  or
+
+  #header h1 {attributes}
+  h2 {font-family: Verdana, Arial, Helvetica, sans-serif;
+       font-size: 110%; color: green; font-weight: bold; }
+
+#comments h2 {font-size: 90%; color: yellow; font-weight: bold;
+       padding: 2px; background: green; border: solid 1px navy; }
+
+#sidebar h2 {font-size: 85%; color: navy; background: transparent;
+       font-weight: bold; border-bottom: dashed 2px yellow; }
+       #sidebar ul {attributes}
+       #sidebar li {attributes}
+       #sidebar ul li {attributes}
+       #sidebar ul ul li {attributes}
+       #sidebar ul ul ul li {attributes}
+       #pagenav {attributes}
+       #pagenav ul {attributes}
+       #pagenav ul li {attributes}

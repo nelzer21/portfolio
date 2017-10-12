@@ -1,25 +1,19 @@
-<?php get_header(); ?>
+<?php get_header();
 
-<div id="content">
+get_post();
 
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+get_sidebar();
 
-    <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+wp_head();
 
-    <?php the_content(); ?>
+wp_footer();
 
-    <p><?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?> | <?php the_category(', '); ?> | <?php comments_number('No comment', '1 comment', '% comments'); ?></p>
+bloginfo();
 
-    <?php endwhile; else: ?>
+get_bloginfo();
 
-    <h2>Woops...</h2>
+wp_get_archives();
 
-    <p>Sorry, no posts we're found.</p>
+wp_list_pages();
 
-    <?php endif; ?>
-
-    <p align="center"><?php posts_nav_link(); ?></p>
-
-</div>
-
-<?php get_footer(); ?>
+get_footer();?>
