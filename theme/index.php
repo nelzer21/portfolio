@@ -1,19 +1,47 @@
-<?php get_header();
+<?php
+get_header(); ?>
 
-get_post();
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
 
-get_sidebar();
+        <?php if ( have_posts() ) : ?>
 
-wp_head();
+            <?php if ( is_home() && ! is_front_page() ) : ?>
+                <header>
+                    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+                </header>
+            <?php endif; ?>
 
-wp_footer();
+            <?php
+            // Start the loop.
+            while ( have_posts() ) : the_post();
 
-bloginfo();
+                /*
+                 * Include the Post-Format-specific template for the content.
+                 * If you want to override this in a child theme, then include a file
+                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                 */
+                get_template_part( 'template-parts/content', get_post_format() );
 
-get_bloginfo();
+            // End the loop.
+            endwhile;
 
-wp_get_archives();
+            // Previous/next page navigation.
+            the_posts_pagination( array(
+                'prev_text'          => __( 'Previous page', 'Awesome' ),
+                'next_text'          => __( 'Next page', 'Awesome' ),
+                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'Awesome' ) . ' </span>',
+            ) );
 
-wp_list_pages();
+        // If no content, include the "No posts found" template.
+        else :
+            get_template_part( 'template-parts/content', 'none' );
 
-get_footer();?>
+        endif;
+        ?>
+
+        </main><!-- .site-main -->
+    </div><!-- .content-area -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

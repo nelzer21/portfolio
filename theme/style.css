@@ -40,3 +40,8 @@ Theme Name: New Sweet Theme
        #pagenav {attributes}
        #pagenav ul {attributes}
        #pagenav ul li {attributes}
+
+#navmenu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none; }
+#navmenu li {display: inline; padding: 5px 20px 5px 20px}
+#navmenu a {text-decoration:none; color: blue; }
+#navmenu a:hover {color: purple; }
