@@ -9,6 +9,9 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <?php
+    /*
+     *  Add this to support sites with sites with threaded comments enabled.
+     */
     if ( is_singular() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
 
@@ -23,11 +26,4 @@
     <div id="header">
         <h1><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></h1>
     </div>
-<?php
-      add_action( 'init', 'register_my_menu' );
-
-      function register_my_menu() {
-          register_nav_menu( 'primary-menu', __( 'Primary Menu' ) );
-      }
-?>
 <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'nav', 'theme_location' => 'primary-menu' ) ); ?>

@@ -57,8 +57,24 @@ h3 {
     clear: both;
     text-align: center;
     height: 50px;
-    background: black;
+    background: #ccc;
     padding: 10px;
+}
+.nav{
+    width:750px;
+    background: #000;
+    display:block;
+    float:left;
+    position:relative;
+}
+
+.nav ul{
+    list-style:none;
+}
+
+.nav li{
+    float:left;
+    position:relative;
 }
 .nav a{
     display:block;
@@ -99,20 +115,3 @@ h3 {
 .nav ul li:hover > ul{
     display:block;
 }
-  .error{
-    padding: 5px 9px;
-    border: 1px solid red;
-    color: red;
-    border-radius: 3px;
-  }
-
-  .success{
-    padding: 5px 9px;
-    border: 1px solid green;
-    color: green;
-    border-radius: 3px;
-  }
-
-  form span{
-    color: red;
-  }
