@@ -1,47 +1,29 @@
-<?php
-get_header(); ?>
+<?php get_header(); ?>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+    <div id="blog">
+        <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 
-        <?php if ( have_posts() ) : ?>
+        <div class="post">
+        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-            <?php if ( is_home() && ! is_front_page() ) : ?>
-                <header>
-                    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                </header>
-            <?php endif; ?>
+            <div class="entry">
+                <?php the_post_thumbnail(); ?>
+                <?php the_content(); ?>
 
-            <?php
-            // Start the loop.
-            while ( have_posts() ) : the_post();
+                <p class="postmetadata">
+                <?php _e('Filed under&#58;'); ?> <?php the_category(', ') ?> <?php _e('by'); ?> <?php  the_author(); ?><br />
+                <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php edit_post_link('Edit', ' &#124; ', ''); ?>
+                </p>
 
-                /*
-                 * Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
-                get_template_part( 'template-parts/content', get_post_format() );
+            </div>
+        </div>
+<?php endwhile; ?>
 
-            // End the loop.
-            endwhile;
+        <div class="navigation">
+        <?php posts_nav_link(); ?>
+        </div>
 
-            // Previous/next page navigation.
-            the_posts_pagination( array(
-                'prev_text'          => __( 'Previous page', 'Awesome' ),
-                'next_text'          => __( 'Next page', 'Awesome' ),
-                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'Awesome' ) . ' </span>',
-            ) );
-
-        // If no content, include the "No posts found" template.
-        else :
-            get_template_part( 'template-parts/content', 'none' );
-
-        endif;
-        ?>
-
-        </main><!-- .site-main -->
-    </div><!-- .content-area -->
-
+        <?php endif; ?>
+    </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

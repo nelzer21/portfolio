@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <title></title>
- </head>
- <body>
-   <div id="header">
-    <div id="headerimg">
-      <h1>
-       <a href="<?php echo get_option('home'); ?>">
-          <?php bloginfo('name'); ?></a>
-      </h1>
-        <div class="description">
-          <?php bloginfo('description'); ?>
-        </div>
-     </div>
-   </div>
-   <div id="navmenu">
- <ul>
-  <li><a href="<?php echo get_settings('home'); ?>">HOME</a></li>
- <?php wp_list_categories('orderby=name&include=1,3,4,5'); ?>
-  <li><a href="<?php echo get_settings('home'); ?>">HOME</a></li>
- </ul>
- </div>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<title><?php wp_title ( '|', true,'right' ); ?></title>
+
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+<?php
+    if ( is_singular() && get_option( 'thread_comments' ) )
+        wp_enqueue_script( 'comment-reply' );
+
+    wp_head();
+
+    wp_get_archives('type=monthly&format=link');
+?>
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="header">
+        <h1><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></h1>
+    </div>
+<?php
+      add_action( 'init', 'register_my_menu' );
+
+      function register_my_menu() {
+          register_nav_menu( 'primary-menu', __( 'Primary Menu' ) );
+      }
+?>
+<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'nav', 'theme_location' => 'primary-menu' ) ); ?>

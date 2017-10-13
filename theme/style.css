@@ -1,47 +1,118 @@
 /*
 Theme Name: New Sweet Theme
 */
-#header {
-	background: #90a090;
-	border-bottom: double 3px #aba;
-	border-left: solid 1px #9a9;
-	border-right: solid 1px #565;
-	border-top: solid 1px #9a9;
-	font: italic normal 230% 'Times New Roman', Times, serif;
-	letter-spacing: 0.2em;
-	margin: 0;
-	padding: 15px 10px 15px 60px;
+body{
+    font-family: Arial, Helvetica, Georgia, Sans-serif;
+    font-size: 12px;
+    background: #d9d9d9;
+    color: #000000;
 }
-#header {
-  background: url("<?php bloginfo('stylesheet_directory'); ?>/images/sunrise.jpg")
-  no-repeat bottom center; }
-#headerimg  {
-  margin: 7px 9px 0;
-  height: 192px;
-  width: 740px; }
-  h1 {attributes}
 
-  or
+a:link, a:visited{
+    text-decoration: none;
+    color: #000000;
+}
 
-  #header h1 {attributes}
-  h2 {font-family: Verdana, Arial, Helvetica, sans-serif;
-       font-size: 110%; color: green; font-weight: bold; }
+a:hover{
+    color: #5f5f5f;
+}
 
-#comments h2 {font-size: 90%; color: yellow; font-weight: bold;
-       padding: 2px; background: green; border: solid 1px navy; }
+h1 {
+    font-size: 54px;
+}
 
-#sidebar h2 {font-size: 85%; color: navy; background: transparent;
-       font-weight: bold; border-bottom: dashed 2px yellow; }
-       #sidebar ul {attributes}
-       #sidebar li {attributes}
-       #sidebar ul li {attributes}
-       #sidebar ul ul li {attributes}
-       #sidebar ul ul ul li {attributes}
-       #pagenav {attributes}
-       #pagenav ul {attributes}
-       #pagenav ul li {attributes}
+h3 {
+    font-size: 24px;
+}
 
-#navmenu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none; }
-#navmenu li {display: inline; padding: 5px 20px 5px 20px}
-#navmenu a {text-decoration:none; color: blue; }
-#navmenu a:hover {color: purple; }
+#wrapper{
+    margin: 0 auto;
+    width: 750px;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+
+}
+
+#header{
+    width: 750px;
+    height: 100px;
+}
+
+#blog{
+    float: left;
+    width: 520px;
+    padding: 0 10px 10px 10px;
+}
+
+.sidebar{
+    float: left;
+    width: 200px;
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    list-style: none;
+}
+
+#footer{
+    clear: both;
+    text-align: center;
+    height: 50px;
+    background: black;
+    padding: 10px;
+}
+.nav a{
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    padding:0 15px 10px 0;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.nav ul ul{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    float:left;
+    z-index:99999;
+    background: #212121;
+}
+
+.nav ul ul ul{
+    top: 30%;
+    left:100%;
+    background: #343434;
+}
+
+.nav ul ul a{
+    height:auto;
+    line-height:1em;
+    padding:10px;
+    width:130px;
+}
+
+.nav li:hover > a,.nav ul ul:hover > a{
+    color:#ccc;
+}
+
+.nav ul li:hover > ul{
+    display:block;
+}
+  .error{
+    padding: 5px 9px;
+    border: 1px solid red;
+    color: red;
+    border-radius: 3px;
+  }
+
+  .success{
+    padding: 5px 9px;
+    border: 1px solid green;
+    color: green;
+    border-radius: 3px;
+  }
+
+  form span{
+    color: red;
+  }
