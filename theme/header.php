@@ -9,9 +9,6 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <?php
-    /*
-     *  Add this to support sites with sites with threaded comments enabled.
-     */
     if ( is_singular() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
 

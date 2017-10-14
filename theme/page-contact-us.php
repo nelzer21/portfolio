@@ -1,3 +1,4 @@
+<?php /* Template Name: CustomPageT1 */ ?>
 <?php get_header(); ?>
 
   <div id="primary" class="site-content">
