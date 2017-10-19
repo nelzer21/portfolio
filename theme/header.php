@@ -11,9 +11,7 @@
 <?php
     if ( is_singular() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
-
     wp_head();
-
     wp_get_archives('type=monthly&format=link');
 ?>
 </head>
