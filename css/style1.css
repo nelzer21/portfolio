@@ -1,4 +1,7 @@
-body {margin:0;}
+body {
+  background: #e9d5d5;
+  text-align: center;
+  margin:0;}
 
 .topnav {
   overflow: hidden;
